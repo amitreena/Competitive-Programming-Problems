@@ -1,0 +1,130 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode reverseBetween(ListNode head, int m, int n)
+    {
+      ListNode temp=head;
+       ListNode temp4=head;
+      ListNode start=null;
+      ListNode newstart=null;
+      ListNode end=null;
+      ListNode curr=null;
+      ListNode prev=null;
+      ListNode temp2=null;
+      ListNode temp3=null;
+      ListNode current=null;
+      ListNode previous=null;
+      ListNode temp6=null;
+      
+      int count=1,counter=0;
+      
+      if(m==1)
+      {
+        count=0;
+        while(temp!=null)
+      {
+        //temp=temp.next;
+       // count++;
+        if(count==(m-1))
+        {
+          start=temp;
+          temp2=start;
+          counter=count+1;
+          while(counter!=n)
+          {
+            temp2=temp2.next;
+            counter=counter+1;
+          }
+        //  System.out.println("here2");
+         // System.out.println(temp2.val);  
+          end=temp2;
+         // System.out.println(start.val); 
+          temp3=start;
+          curr=start;
+          ListNode temp5=end.next;
+          prev=null;
+          
+          while(temp3!=(temp5))
+          {
+            temp3=temp3.next;
+           // System.out.println(temp3.val); 
+            curr.next=prev;
+            prev=curr;
+            curr=temp3;
+          }
+          
+          newstart=prev;
+          temp.next=newstart;
+          start.next=temp3;
+        }
+        count++;
+        temp=temp.next;
+      }
+//       while(newstart!=null)
+//       {
+//         System.out.println("here");
+//         System.out.println(newstart.val);
+//         newstart=newstart.next;
+//       }
+       return(newstart); 
+      }
+      else
+      {
+        while(temp!=null)
+      {
+        //temp=temp.next;
+       // count++;
+        if(count==(m-1))
+        {
+          start=temp.next;
+          temp2=start;
+          counter=count+1;
+          while(counter!=n)
+          {
+            temp2=temp2.next;
+            counter=counter+1;
+          }
+        //  System.out.println("here2");
+         // System.out.println(temp2.val);  
+          end=temp2;
+         // System.out.println(start.val); 
+          temp3=start;
+          curr=start;
+          ListNode temp5=end.next;
+          prev=null;
+          
+          while(temp3!=(temp5))
+          {
+            temp3=temp3.next;
+           // System.out.println(temp3.val); 
+            curr.next=prev;
+            prev=curr;
+            curr=temp3;
+          }
+          
+          newstart=prev;
+          temp.next=newstart;
+          start.next=temp3;
+        }
+        count++;
+        temp=temp.next;
+      }
+      while(newstart!=null)
+      {
+        System.out.println("here");
+        System.out.println(newstart.val);
+        newstart=newstart.next;
+      }
+        
+      }
+      
+      return(head);
+        
+    }
+}
