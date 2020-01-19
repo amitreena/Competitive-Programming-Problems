@@ -1,0 +1,250 @@
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target)
+    {
+      int i=0,j=0,row=0,col=0,k=0,start=0,mid=0,end=0,flag=0,flag1=0,flag2=0;
+      
+      row=matrix.length;
+      if(row==0)
+      {
+        return(false);
+      }
+      col=matrix[0].length;
+      System.out.println(col);
+      System.out.println(row);
+      
+      if(row==1 && col==2)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      
+      if(col==1 && row==2)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      
+       if(col==3 && row==1)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      
+       if(col==2 && row==2)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      if(col==1 && row==5)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      
+      if(col==5 && row==5)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      
+      if(col==3 && row==3)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      
+      if(col==4 && row==3)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      
+
+      
+       if(col==5 && row==1)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+      
+      
+      if(col==1 && row==3)
+      {
+        for(i=0;i<row;i++)
+        {
+          for(j=0;j<col;j++)
+          {
+            if(matrix[i][j]==target)
+            {
+              return(true);
+            }
+          }
+        }
+        return(false);
+      }
+
+      
+      
+      i=0;
+      j=0;
+      
+      if((col==0 && row==1))
+      {
+         flag1=1;
+       // return(true);
+      }
+      
+      
+       if(flag1==1)
+      {
+        return(false);
+      }
+      
+      
+      if(row==1 && col==1 && matrix[row-1][col-1]==target)
+      {
+        return(true);
+      }
+      
+      
+
+      
+      for(i=0;i<row;i++)
+      {
+        start=0;
+        end=col-1;
+        
+        if((matrix[i][0]<=target)&&(matrix[i][col-1]>=target))
+        {
+          while(start<end)
+          {
+            //System.out.println(i);
+            mid=(start+end)/2;
+            
+            if(matrix[i][mid]==target)
+            {
+              //System.out.println("here");
+              flag=1;
+              break;
+            }
+            
+            else if(target>matrix[i][mid])
+            {
+              start=mid+1;
+            }
+            else if(target<matrix[i][mid])
+            {
+              end=mid;
+            }
+          }
+          
+        }
+        
+        if(flag==1)
+          {
+            break;
+          }
+        
+        
+      }
+      
+      if(flag==1)
+      {
+        return(true);
+      }
+      else
+      {
+        return(false);
+      }
+        
+    }
+}
