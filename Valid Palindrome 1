@@ -1,0 +1,52 @@
+class Solution {
+    public boolean isPalindrome(String s) 
+    {
+      
+      char arr1[]=s.toLowerCase().toCharArray();
+      char arr2[];
+      int i=0,k=0,len=0,start=0,end=0,trig=0;
+      len=arr1.length;
+      arr2=new char[len];
+      
+      for(i=0;i<len;i++)
+      {
+        if((arr1[i]>=97 && arr1[i]<=122)||(arr1[i]>=48 && arr1[i]<=57))
+        {
+          arr2[k++]=arr1[i];
+        }
+      }
+      int actlen=0;
+      //arr2[k]='\0';
+     // k=0;
+      
+      System.out.println(arr2.length);
+      
+      start=0;
+      end=k-1;
+      while(start<end)
+      {
+        if(arr2[start]==arr2[end])
+        {
+          trig=0;
+         }
+        else
+        {
+          trig=1;
+          break;
+        }
+        start++;
+          end--;
+
+      }
+      
+      if(trig!=1)
+      {
+        return(true);
+      }
+      else
+      {
+        return(false);
+      }
+        
+    }
+}
